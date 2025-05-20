@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Foodela/static/css/main.08b3e85c.css",
+    "main.js": "/Foodela/static/js/main.74d3e6d1.js",
+    "static/js/453.f52f381e.chunk.js": "/Foodela/static/js/453.f52f381e.chunk.js",
+    "index.html": "/Foodela/index.html",
+    "main.08b3e85c.css.map": "/Foodela/static/css/main.08b3e85c.css.map",
+    "main.74d3e6d1.js.map": "/Foodela/static/js/main.74d3e6d1.js.map",
+    "453.f52f381e.chunk.js.map": "/Foodela/static/js/453.f52f381e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08b3e85c.css",
+    "static/js/main.74d3e6d1.js"
+  ]
+}
