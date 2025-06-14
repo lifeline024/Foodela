@@ -5,16 +5,11 @@ const mongoURI =
 
 const mongoDB = async () => {
   try {
-    // Connect without deprecated options
-    await mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
+    // ✅ Do NOT include any options like useNewUrlParser or useUnifiedTopology
+    await mongoose.connect(mongoURI);
 
     console.log("✅ MongoDB connected successfully");
 
-    // Fetch food items
     const fetchedData = await mongoose.connection.db
       .collection("food_items")
       .find({})
@@ -22,16 +17,14 @@ const mongoDB = async () => {
     global.food_items = fetchedData;
     console.log(`🍽️ Loaded ${global.food_items.length} food items`);
 
-    // Fetch food categories
     const fetchedCategory = await mongoose.connection.db
       .collection("food_category")
       .find({})
       .toArray();
     global.food_category = fetchedCategory;
     console.log(`📦 Loaded ${global.food_category.length} food categories`);
-    
   } catch (err) {
-    console.error("❌ Error connecting to MongoDB:", err.message);
+    console.error("❌ MongoDB connection error:", err.message);
     throw err;
   }
 };
