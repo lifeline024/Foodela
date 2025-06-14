@@ -14,7 +14,7 @@ export default function Home() {
   const loadData = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/foodData", {
+      const response = await fetch("https://backend-8qhm.onrender.com/api/foodData", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });
