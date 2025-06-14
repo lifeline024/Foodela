@@ -6,7 +6,11 @@ const mongoURI =
 const mongoDB = async () => {
   try {
     // Connect without deprecated options
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
 
     console.log("✅ MongoDB connected successfully");
 
