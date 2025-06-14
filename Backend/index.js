@@ -8,7 +8,7 @@ const port = 5000;
 
 app.use(
   cors({
-    origin: ["https://backend-8qhm.onrender.com"], 
+    origin: ["https://foodela.vercel.app"], 
   })
 );
 
