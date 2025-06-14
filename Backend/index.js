@@ -6,11 +6,10 @@ const mongoDB = require("./db");
 const app = express();
 const port = 5000;
 
-app.use(
-  cors({
-    origin: ["https://foodela.vercel.app"], 
-  })
-);
+app.use(cors({
+  origin: "https://foodela.vercel.app"
+}));
+
 
 app.use(express.json());
 
