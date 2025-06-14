@@ -5,30 +5,29 @@ const mongoURI =
 
 const mongoDB = async () => {
   try {
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log("MongoDB connected");
+    // Connect without deprecated options
+    await mongoose.connect(mongoURI);
+
+    console.log("✅ MongoDB connected successfully");
 
     // Fetch food items
-    const fetched_data = await mongoose.connection.db
+    const fetchedData = await mongoose.connection.db
       .collection("food_items")
       .find({})
       .toArray();
-    global.food_items = fetched_data;
-    console.log("Food items loaded:", global.food_items.length);
+    global.food_items = fetchedData;
+    console.log(`🍽️ Loaded ${global.food_items.length} food items`);
 
-    // Fetch food categories with correct collection name
-    const foodCategory = await mongoose.connection.db
+    // Fetch food categories
+    const fetchedCategory = await mongoose.connection.db
       .collection("food_category")
       .find({})
       .toArray();
-    global.food_category = foodCategory;
-    console.log("Food categories loaded:", global.food_category.length);
+    global.food_category = fetchedCategory;
+    console.log(`📦 Loaded ${global.food_category.length} food categories`);
     
   } catch (err) {
-    console.error("Error connecting to MongoDB:", err);
+    console.error("❌ Error connecting to MongoDB:", err.message);
     throw err;
   }
 };
