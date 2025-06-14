@@ -14,7 +14,7 @@ export default function Login() {
     setError("");
     
     try {
-      const response = await fetch("http://192.168.38.20:5000/api/loginuser", {
+      const response = await fetch("https://backend-8qhm.onrender.com/api/loginuser", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
