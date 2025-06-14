@@ -8,7 +8,7 @@ const port = 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://192.168.38.20:3000"], // add your PC's IP here
+    origin: ["https://backend-8qhm.onrender.com"], 
   })
 );
 
